@@ -1,7 +1,9 @@
+import 'package:contact_learn/controller/service_provider.dart';
 import 'package:contact_learn/model/model.dart';
 import 'package:contact_learn/service/servise.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
 
 class UpdateScreen extends StatefulWidget {
   String? id;
@@ -25,6 +27,7 @@ class UpdateScreen extends StatefulWidget {
 class _UpdateScreenState extends State<UpdateScreen> {
   @override
   Widget build(BuildContext context) {
+    final pro = Provider.of<Apiprovider>(context);
     TextEditingController nameController =
         TextEditingController(text: widget.name);
     TextEditingController emailController =
@@ -76,7 +79,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  ServiceApi().updateData(ApiModel(
+                  pro.updatedata(ApiModel(
                       address: addressController.text,
                       email: emailController.text,
                       name: nameController.text,

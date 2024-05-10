@@ -1,22 +1,28 @@
+// ignore_for_file: must_be_immutable
+
+import 'dart:developer';
+
+import 'package:contact_learn/controller/service_provider.dart';
 import 'package:contact_learn/model/model.dart';
-import 'package:contact_learn/service/servise.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
 
-class AddContactPage extends StatefulWidget {
-  const AddContactPage({super.key});
+class AddContactPage extends StatelessWidget {
+  AddContactPage({super.key});
 
-  @override
-  State<AddContactPage> createState() => _AddContactPageState();
-}
-
-class _AddContactPageState extends State<AddContactPage> {
   TextEditingController nameController = TextEditingController();
+
   TextEditingController emailController = TextEditingController();
+
   TextEditingController phoneController = TextEditingController();
+
   TextEditingController addressController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    final pro = Provider.of<Apiprovider>(context, listen: false);
+    log('message');
     return Scaffold(
       appBar: AppBar(
         title: const Text('ADD CONTACT'),
@@ -60,7 +66,7 @@ class _AddContactPageState extends State<AddContactPage> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  ServiceApi().addData(ApiModel(
+                  pro.adddata(ApiModel(
                       address: addressController.text,
                       email: emailController.text,
                       name: nameController.text,

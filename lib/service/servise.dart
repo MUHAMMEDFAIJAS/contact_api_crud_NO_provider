@@ -48,18 +48,18 @@ class ServiceApi {
     }
   }
 
-  Future<List<ApiModel>> fetch() async {
-    try {
-      final response = await dio
-          .get("https://contacts-management-server.onrender.com/api/contacts");
-      if (response.statusCode == 200) {
-        List<dynamic> jsondata = response.data;
-        return jsondata.map((item) => ApiModel.fromJsom(item)).toList();
-      } else {
-        throw Exception('failed to fetch data');
-      }
-    } catch (e) {
-      return [];
-    }
-  }
+  // Future<List<ApiModel>> fetch() async {
+  //   try {
+  //     final response = await dio
+  //         .get("https://contacts-management-server.onrender.com/api/contacts");
+  //     if (response.statusCode == 200) {
+  //       List<dynamic> jsondata = response.data;
+  //       return jsondata.map((item) => ApiModel.fromJsom(item)).toList();
+  //     } else {
+  //       throw Exception('failed to fetch data');
+  //     }
+  //   } catch (e) {
+  //     return [];
+  //   }
+  // }
 }
