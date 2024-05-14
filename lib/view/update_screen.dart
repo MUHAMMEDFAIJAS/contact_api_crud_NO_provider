@@ -1,6 +1,5 @@
 import 'package:contact_learn/controller/service_provider.dart';
 import 'package:contact_learn/model/model.dart';
-import 'package:contact_learn/service/servise.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
@@ -51,7 +50,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
                   hintText: 'name',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(color: Colors.blue))),
+                      borderSide: const BorderSide(color: Colors.blue))),
             ),
             const Gap(20),
             TextFormField(

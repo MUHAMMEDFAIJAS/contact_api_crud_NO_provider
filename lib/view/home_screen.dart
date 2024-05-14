@@ -48,14 +48,17 @@ class HomeScreen extends StatelessWidget {
                         ),
                         IconButton(
                             onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
                                   builder: (context) => UpdateScreen(
-                                        name: data.name.toString(),
-                                        address: data.address.toString(),
-                                        email: data.email.toString(),
-                                        phone: data.phone.toString(),
-                                        id: data.id,
-                                      )));
+                                    name: data.name.toString(),
+                                    address: data.address.toString(),
+                                    email: data.email.toString(),
+                                    phone: data.phone.toString(),
+                                    id: data.id,
+                                  ),
+                                ),
+                              );
                             },
                             icon: const Icon(Icons.edit))
                       ],
